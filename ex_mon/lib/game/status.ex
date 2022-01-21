@@ -23,19 +23,19 @@ defmodule ExMon.Game.Status do
     IO.puts("\n====== Invalid move: #{move}. ======\n")
   end
 
-  def print_move_message(:computer, :attack, damage ) do
+  def print_move_message(:computer, :attack, damage) do
     IO.puts("\n====== The Player attacked the computer dealing #{damage} damage. ======\n")
   end
 
-  def print_move_message(:player, :attack, damage ) do
+  def print_move_message(:player, :attack, damage) do
     IO.puts("\n====== The Computer attacked the player dealing #{damage} damage. ======\n")
   end
 
   def print_move_message(:computer, :heal, life) do
-    IO.puts("\n====== The Computer healled itself to life #{heal} points. ======\n")
+    IO.puts("\n====== The Computer healled itself to life #{life} points. ======\n")
   end
 
   def print_move_message(:player, :heal, life) do
-    IO.puts("\n====== The Player healled itself to life #{heal} points. ======\n")
+    IO.puts("\n====== The Player healled itself to life #{life} points. ======\n")
   end
 end

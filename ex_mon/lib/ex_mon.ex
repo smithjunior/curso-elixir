@@ -27,7 +27,7 @@ defmodule ExMon do
 
   defp handle_status(_other, move) do
     move
-    |> Actions.fecth_move
+    |> Actions.fetch_move
     |> do_move
 
     computer_move(Game.info())

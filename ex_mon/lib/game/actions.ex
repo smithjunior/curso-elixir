@@ -9,7 +9,7 @@ defmodule ExMon.Game.Actions do
     end
   end
 
-  def fecth_move(move) do
+  def fetch_move(move) do
     Game.player()
     |> Map.get(:moves)
     |> find_move(move)

@@ -17,12 +17,12 @@ defmodule FizzBuzz do
   defp convert_and_evaluate_numbers(elem) do
     elem
     |> String.to_integer
-    |> evaluaete_numbers
+    |> evaluate_numbers
   end
 
-  defp evaluaete_numbers(number) when rem(number, 3) == 0 and rem(number, 5) == 0, do: :fizzbuzz
-  defp evaluaete_numbers(number) when rem(number, 3) == 0, do: :fizz
-  defp evaluaete_numbers(number) when rem(number, 5) == 0, do: :buzz
-  defp evaluaete_numbers(number), do: number
+  defp evaluate_numbers(number) when rem(number, 3) == 0 and rem(number, 5) == 0, do: :fizzbuzz
+  defp evaluate_numbers(number) when rem(number, 3) == 0, do: :fizz
+  defp evaluate_numbers(number) when rem(number, 5) == 0, do: :buzz
+  defp evaluate_numbers(number), do: number
 
 end

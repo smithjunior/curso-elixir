@@ -12,7 +12,7 @@ defmodule ExMon.Trainer.Update do
   defp update(%{"id" => id} = params) do
     case Repo.get(Trainer, uuid) do
       nil -> {:error, "trainer not found!"}
-      trainer -> {:ok, update_trainer(params)}
+      trainer -> {:ok, update_trainer(trainer, params)}
     end
   end
 

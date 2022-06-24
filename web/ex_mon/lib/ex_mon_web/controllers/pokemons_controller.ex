@@ -5,7 +5,7 @@ defmodule ExMonWeb.PokemonsController do
 
   def show(conn, %{"name" => name}) do
     name
-    |> ExMon.fetch_pokemon
+    |> ExMon.fetch_pokemon()
     |> handle_response(conn)
   end
 

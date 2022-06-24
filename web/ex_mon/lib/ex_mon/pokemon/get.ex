@@ -4,7 +4,7 @@ defmodule ExMon.Pokemon.Get do
 
   def call(name) do
     name
-    |> Client.get_pokemon
+    |> Client.get_pokemon()
     |> handle_response
   end
 

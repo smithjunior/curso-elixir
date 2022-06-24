@@ -6,20 +6,22 @@ defmodule ExMon.Trainer.Pokemon.Create do
 
   def call(%{"name" => name} = params) do
     name
-    |> Client.get_pokemon
+    |> Client.get_pokemon()
     |> handle_response(params)
   end
 
   defp handle_response({:ok, body}, params) do
     body
-    |> Pokemon.build
+    |> Pokemon.build()
     |> create_pokemon(params)
   end
 
   defp handle_response({:error, _msg} = error, params), do: error
 
-  defp create_pokemon(%Pokemon{name: name, weight: weight, types: types},
-    %{"nickname" => nickname, "trainer_id" => trainer_id}) do
+  defp create_pokemon(
+         %Pokemon{name: name, weight: weight, types: types},
+         %{"nickname" => nickname, "trainer_id" => trainer_id}
+       ) do
     params = %{
       name: name,
       weight: weight,
@@ -29,7 +31,7 @@ defmodule ExMon.Trainer.Pokemon.Create do
     }
 
     params
-    |> TrainerPokemon.build
+    |> TrainerPokemon.build()
     |> handle_build
   end
 

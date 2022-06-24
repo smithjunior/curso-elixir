@@ -20,6 +20,6 @@ defmodule ExMon.Trainer.Pokemon.Update do
   defp update_pokemon(pokemon, params) do
     pokemon
     |> Pokemon.update_changeset(params)
-    |> Repo.update
+    |> Repo.update()
   end
 end

@@ -19,6 +19,6 @@ defmodule ExMon.Trainer.Update do
   defp update_trainer(trainer, params) do
     trainer
     |> Trainer.changeset(params)
-    |> Repo.update
+    |> Repo.update()
   end
 end

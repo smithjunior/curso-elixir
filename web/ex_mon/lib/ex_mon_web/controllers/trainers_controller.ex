@@ -5,6 +5,14 @@ defmodule ExMonWeb.TrainersController do
 
   action_fallback ExMonWeb.FallbackController
 
+  def sign_in(conn, params) do
+    with {:ok, token} <- Guardian.authenticate(params) do
+      conn
+      |> put_status(:ok)
+      |> render("sign_in.json", token: token)
+    end
+  end
+
   def create(conn, params) do
     with {:ok, trainer} <- ExMon.create_trainer(params),
          {:ok, token, _claims} <- Guardian.encode_and_sign(trainer) do

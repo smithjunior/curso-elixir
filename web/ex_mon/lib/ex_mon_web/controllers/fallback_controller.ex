@@ -7,4 +7,11 @@ defmodule ExMonWeb.FallbackController do
     |> put_view(ExMonWeb.ErrorView)
     |> render("400.json", result: result)
   end
+
+  def call(conn, {:error, :unauthorized}) do
+    conn
+    |> put_status(:unauthorized)
+    |> put_view(ExMonWeb.ErrorView)
+    |> render("401.json", message: "Trainer unauthorized!")
+  end
 end

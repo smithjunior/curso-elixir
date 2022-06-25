@@ -35,3 +35,6 @@ config :ex_mon, ExMonWeb.Auth.Guardian,
   secret_key: "i8MSYHjFjqgllbUxNm72vN42BcxlQFINvD53ZKo6dknIzz+0YWBNY0d8k9ICJA4J"
 
 # "Secret key. You can use `mix guardian.gen.secret` to get one"
+config :ex_mon, ExMonWeb.Auth.Pipeline,
+  module: ExMonWeb.Auth.Guardian,
+  error_handler: ExMonWeb.Auth.ErrorHandler

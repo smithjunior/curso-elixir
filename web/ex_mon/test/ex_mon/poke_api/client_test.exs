@@ -9,6 +9,7 @@ defmodule ExMon.ClientTest do
   describe "get_pokemon/1" do
     test "when there is a pokemon with the given name, return the pokemon" do
       body = %{"name" => "pikachu", "weight" => 60, "types" => ["eletric"]}
+
       mock(fn %{method: :get, url: @base_url <> "pikachu"} ->
         %Tesla.Env{status: 200, body: body}
       end)
